@@ -1,0 +1,125 @@
+:root {
+  --color-card: #fdfdfd;
+  --color-background: #eff1f5;
+  --color-text-default: #010101;
+  --color-text-default-sub: rgba(1, 1, 1, 0.8);
+  --color-text-sub: #777f87;
+  --color-text-disabled: rgba(1, 1, 1, 0.3);
+  --color-text-lnb-title: #59636e;
+  --color-text-lnb-sub: #818991;
+  --color-text-sub2: #6a6e77;
+  --color-text-lnb-line: #b3b9bf;
+  --color-text-m: #fafafa;
+  --color-line-default: #d3d6dc;
+  --color-line-sub: rgba(211, 214, 220, 0.5);
+  --color-line-thick: #d3d6dc;
+  --color-line-panel: #dfe2ea;
+  --color-scroll-bar: #d9dbe0;
+  --color-primary-text: #376fde;
+  --color-component-pink: rgba(255, 100, 98, 0.3);
+  --color-component-yellow: rgba(245, 166, 35, 0.3);
+  --color-component-purple-blue: rgba(0, 144, 254, 0.3);
+  --color-component-purple: rgba(161, 33, 208, 0.3);
+  --color-component-green: rgba(0, 165, 60, 0.3);
+  --color-component-mint: rgba(0, 187, 196, 0.3);
+  --color-component-gray: rgba(140, 145, 151, 0.3);
+  --color-dialog-line: rgba(192, 198, 203, 0.15);
+  --color-dialog-bg: #fdfdfd;
+  --color-state-mouseover: rgba(34, 47, 98, 0.08);
+  --color-state-press: rgba(34, 47, 98, 0.15);
+  --color-toggle-bg: #dfe2e9;
+  --color-toggle-button: #f6f6f6;
+  --color-table-th-item-txt: #59636e;
+  --color-table-td-item-txt: #010101;
+  --color-graph-item-text-sub: #777f87;
+  --color-hover-bg-table-item: rgba(34, 45, 98, 0.08);
+  --color-header-purple: #dc8df0;
+  --color-selected-bg-table-item: rgba(34, 45, 98, 0.15);
+  --color-white: #fdfdfd;
+  --color-scroll-thumb: #d9dbe0;
+  --color-toggle-dashboard-bg: #dfe2ea;
+  --color-toggle-dashboard-button-bg: #eff1f5;
+  --color-toggle-title: #777f87;
+  --color-button-primary: #387aff;
+  --color-line-dropdown-border: #c0c6cb26;
+  --color-shadow-dropdown-border: #09101926;
+  --color-button-primary: #387aff;
+  --color-button-press: #2a5cbf;
+  --color-header-purple: #dc8df0;
+
+  --device_pc: 1920px;
+  --device_pc1: 1440px;
+  --device_tablet: 1280px;
+  --device_tablet1: 720px;
+  --device_mobile: 412px;
+
+  --header_height: 56px;
+  --table-min-width: 1608px;
+  --table-min-height: 160px;
+  --table-user-min-height: 742px;
+  --table-emissions-min-height: 196px;
+  --table-energy-min-width: 1100px;
+  --table-measurement-min-width: 1216px;
+  --table-mobile-min-height: 494px;
+  --middle-layer-pc-min-width: 342px;
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_200";
+  src: url("../../asset/font/SamsungOneKoreanOTF_200.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_200C";
+  src: url("../../asset/font/SamsungOneKoreanOTF_200C.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_300";
+  src: url("../../asset/font/SamsungOneKoreanOTF_300.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_300C";
+  src: url("../../asset/font/SamsungOneKoreanOTF_300C.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_400";
+  src: url("../../asset/font/SamsungOneKoreanOTF_400.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_400";
+  src: url("../../asset/font/SamsungOneKoreanOTF_400C.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_500";
+  src: url("../../asset/font/SamsungOneKoreanOTF_500.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_500";
+  src: url("../../asset/font/SamsungOneKoreanOTF_500C.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_600";
+  src: url("../../asset/font/SamsungOneKoreanOTF_600.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_600C";
+  src: url("../../asset/font/SamsungOneKoreanOTF_600C.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_700";
+  src: url("../../asset/font/SamsungOneKoreanOTF_700C.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanOTF_700C";
+  src: url("../../asset/font/SamsungOneKoreanOTF_700C.otf") format("opentype");
+}
