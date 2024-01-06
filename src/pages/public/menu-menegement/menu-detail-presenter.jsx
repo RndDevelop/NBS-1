@@ -15,6 +15,7 @@ export default function MenuDetailPresenter(props) {
     disabled,
     menuLevelChecked,
     prevSelectedItemKeys,
+    width,
   } = props;
 
   //하위레벨, 같은레벨, 저장 ,삭제 버튼의 스타일
@@ -97,7 +98,17 @@ export default function MenuDetailPresenter(props) {
       {/*선택한 로우의 값들을 보여줌*/}
       {prevSelectedItemKeys && (
         <form onSubmit={handleSubmit((data, e) => onClickSave(data, e))}>
-          <Grid container rowSpacing={1} columnSpacing={0} sx={{ flexGrow: 1 }}>
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={0}
+            sx={{
+              flexGrow: 1,
+              // overflowY: "auto",
+              // backgroundColor: "red",
+              height: width > 1440 ? 970 : 640,
+            }}
+          >
             <Grid xs={12} md={12} lg={12} xl={3.8}>
               <Typography variant="h3" gutterBottom>
                 메뉴정보

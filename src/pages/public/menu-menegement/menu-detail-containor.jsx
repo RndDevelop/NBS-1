@@ -20,6 +20,8 @@ export default function MenuDetailContainor(props) {
     setDisabled,
     menuData,
     selectedSystem,
+    width,
+    displayWith,
   } = props;
 
   const { register, handleSubmit, control, setValue, reset } = useForm({
@@ -481,6 +483,7 @@ export default function MenuDetailContainor(props) {
       disabled={disabled}
       btnType={btnType}
       menuLevelChecked={menuLevelChecked}
+      width={width}
     />
   );
 }

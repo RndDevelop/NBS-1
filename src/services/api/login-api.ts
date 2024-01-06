@@ -2,8 +2,8 @@ import axios, { AxiosError } from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getCookie, removeCookie, setCookie } from "../../config/cookies";
 
-//axios 디폴트로 정함
-axios.defaults.baseURL = "http://222.99.194.215:8080";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 axios.defaults.withCredentials = false;
 axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie(
   "accessToken"
@@ -32,7 +32,7 @@ export const loginUser = createAsyncThunk(
 
     try {
       const response = await axios
-        .post("/api/v1/auth/authenticate", baToken, {
+        .post(BASE_URL + "/api/v1/auth/authenticate", baToken, {
           headers: { Authorization: baToken, menu: "NBSZ0000" },
         })
         .then((res: IUserToken) => {
@@ -64,7 +64,7 @@ export const refreshToken = createAsyncThunk(
   async (token: string, { rejectWithValue }) => {
     try {
       const response = await axios
-        .post("/api/v1/auth/refresh-token", null, {
+        .post(BASE_URL + "/api/v1/auth/refresh-token", null, {
           headers: { menu: "NBSXA010", Authorization: `Bearer ${token}` },
         })
         .then((res) => {
@@ -79,6 +79,8 @@ export const refreshToken = createAsyncThunk(
         .catch((error: AxiosError) => {
           return error.message;
         });
+
+      return response;
 
       // setCookie("accessToken", response.data.access_token);
       // setCookie("refreshToken", response.data.refresh_token);

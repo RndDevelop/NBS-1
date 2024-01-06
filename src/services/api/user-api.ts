@@ -34,10 +34,11 @@ interface IUserInsert {
   useYn: string;
   delYn: string;
 }
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 const accessToken = getCookie("accessToken");
 export const userQuery = (roll: string) => {
   const response = axios
-    .get<IUser[]>(`/api/v1/menu/common/usermanagements/users`, {
+    .get<IUser[]>(BASE_URL + `/api/v1/menu/common/usermanagements/users`, {
       headers: { Authorization: `Bearer ${accessToken}`, menu: roll },
     })
     .catch((error) => error.message);
@@ -62,9 +63,15 @@ export const createUser = (roll: string, body: IUserInsert) => {
 export const deleteUser = (userInfo: { roll: string; userId: string }) => {
   console.log(userInfo);
   const response = axios
-    .delete(`/api/v1/menu/common/usermanagements/users/${userInfo.userId}`, {
-      headers: { Authorization: `Bearer ${accessToken}`, menu: userInfo.roll },
-    })
+    .delete(
+      BASE_URL + `/api/v1/menu/common/usermanagements/users/${userInfo.userId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          menu: userInfo.roll,
+        },
+      }
+    )
 
     .then((res) => res.data)
     .catch((error) => {

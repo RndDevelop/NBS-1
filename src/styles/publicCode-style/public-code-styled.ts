@@ -5,8 +5,7 @@ export const publicWrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  overflow-y: scroll;
+  justify-content: center;
 `;
 
 export const left = styled.div`
@@ -15,56 +14,56 @@ export const left = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-
-  @media screen and (max-width: 1440px) {
+  @media screen and (min-width: 360px) and (max-width: 1440px) {
     flex-direction: column;
   }
+  /* overflow: hidden; */
 `;
 
 export const ParentCodeBox1 = styled.div`
-  width: 40%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  align-items: center;
 
-  @media screen and (max-width: 1440px) {
-    height: 40%;
-    width: 90%;
-  }
-
-  @media screen and (max-width: 360px) {
-    height: 40%;
-    width: 90%;
-  }
-`;
-
-export const Between = styled.div`
-  width: 5%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-
-  padding-top: 50px;
-
-  @media screen and (max-width: 1440px) {
-    width: 100%;
-    height: 1%;
+  @media screen and (min-width: 360px) and (max-width: 1440px) {
+    width: 98%;
+    height: 35%;
   }
 `;
 
 export const ParentCodeBox2 = styled.div`
-  width: 40%;
+  width: 50%;
   height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  overflow: hidden;
-  padding-top: 50px;
 
-  @media screen and (max-width: 1440px) {
-    height: 40%;
-    width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 360px) and (max-width: 1440px) {
+    width: 98%;
+    height: 65%;
+  }
+`;
+
+export const ParentGridBox = styled.div`
+  width: 98%;
+  height: 98%;
+
+  @media screen and (min-width: 360px) and (max-width: 1440px) {
+    width: 98%;
+    height: 95%;
+  }
+`;
+
+export const ChildGridBox = styled.div`
+  width: 98%;
+  height: 98%;
+
+  @media screen and (min-width: 360px) and (max-width: 1440px) {
+    width: 98%;
+    height: 95%;
   }
 `;
 
@@ -72,6 +71,17 @@ export const StateCodeNameBox = styled.div`
   width: 100%;
   width: 100%;
 `;
+
+// export const Between = styled.div`
+//   width: 2%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+
+//   @media screen and (min-width: 360px) and (max-width: 1440px) {
+//     height: 3%;
+//   }
+// `;
 
 // export const right = styled.div`
 //   width: 50%;

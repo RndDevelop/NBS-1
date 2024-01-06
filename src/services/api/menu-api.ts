@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { getCookie } from "../../config/cookies";
 
 import {
@@ -10,7 +10,7 @@ import {
   IMenumanagementSub,
   SubMenu,
 } from "../../types/menu-type/menu-type";
-
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 //NBSXA010
 //NBSZ0000
 export const menuQuery = async (
@@ -24,12 +24,15 @@ export const menuQuery = async (
   } else {
     try {
       const response = await axios
-        .get<IMenu[]>(`/api/v1/menu/common/menumanagement/menus/${systemId}`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            menu: "NBSXA010",
-          },
-        })
+        .get<IMenu[]>(
+          BASE_URL + `/api/v1/menu/common/menumanagement/menus/${systemId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              menu: "NBSXA010",
+            },
+          }
+        )
         .catch((error: any) => error.message);
       if (response.status === 401) {
         console.log(response);
@@ -109,7 +112,7 @@ export const menuQuery = async (
         return RootData;
       }
     } catch (error) {
-      console.error("메뉴를 불러오는 중 오류 발생:", error);
+      return;
     }
   }
 };
@@ -125,7 +128,7 @@ export const menuMenegementQuery = async (systemId: string) => {
 
   if (systemId !== "") {
     const response = await axios.get(
-      `/api/v1/menu/common/menumanagement/menus/${systemId}`,
+      BASE_URL + `/api/v1/menu/common/menumanagement/menus/${systemId}`,
       {
         headers: { Authorization: `Bearer ${accessToken}`, menu: "NBSXA010" },
       }
@@ -333,9 +336,13 @@ export const createMenus = async (
   if (Number(body.prntmenuId) === 0) {
     try {
       const response = await axios
-        .post("/api/v1/menu/common/menumanagement/supermenus", body, {
-          headers: { Authorization: `Bearer ${accessToken}`, menu: roll },
-        })
+        .post(
+          BASE_URL + "/api/v1/menu/common/menumanagement/supermenus",
+          body,
+          {
+            headers: { Authorization: `Bearer ${accessToken}`, menu: roll },
+          }
+        )
         .catch((error: any) => error.message);
 
       return response;
@@ -345,7 +352,8 @@ export const createMenus = async (
   }
   try {
     const response = await axios.post(
-      `/api/v1/menu/common/menumanagement/menus/${menuId}/${prntmenuId}/${type}`,
+      BASE_URL +
+        `/api/v1/menu/common/menumanagement/menus/${menuId}/${prntmenuId}/${type}`,
       body,
       {
         headers: { Authorization: `Bearer ${accessToken}`, menu: roll },
@@ -372,9 +380,13 @@ export const updateMenu = async (
 ) => {
   const accessToken = getCookie("accessToken");
   const response = await axios
-    .put(`/api/v1/menu/common/menumanagement/meuns/${String(menuId)}`, body, {
-      headers: { Authorization: `Bearer ${accessToken}`, menu: roll },
-    })
+    .put(
+      BASE_URL + `/api/v1/menu/common/menumanagement/meuns/${String(menuId)}`,
+      body,
+      {
+        headers: { Authorization: `Bearer ${accessToken}`, menu: roll },
+      }
+    )
 
     .catch((error: any) => error.message);
 
@@ -387,7 +399,7 @@ export const dellMenu = async (roll: string, menuId: string) => {
 
   try {
     const response = await axios.delete(
-      `/api/v1/menu/common/menumanagement/meuns/${menuId}`,
+      BASE_URL + `/api/v1/menu/common/menumanagement/meuns/${menuId}`,
       {
         headers: { Authorization: `Bearer ${accessToken}`, menu: roll },
       }

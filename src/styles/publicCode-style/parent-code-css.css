@@ -1,0 +1,26 @@
+#addRow {
+  border-radius: 30px;
+}
+#success {
+  border-radius: 30px;
+}
+#deleteRow {
+  border-radius: 30px;
+}
+
+.dx-command-edit > .dx-link-edit {
+  display: none !important;
+}
+
+/* .dx-link-save {
+  display: none;
+}
+
+.dx-link-cancel {
+  display: none;
+} */
+
+.dx-command-edit {
+  display: none;
+  /* display: table-cell; */
+}

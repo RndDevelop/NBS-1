@@ -87,11 +87,11 @@ export default function UserMenegement() {
             </DataGrid>
           </S.Top>
           <S.Bottom>
-            {selectedItemKeys.length !== 0 ? (
+            {/* {selectedItemKeys.length !== 0 ? (
               <UserDetail selectedItemKeys={selectedItemKeys} />
             ) : (
               <div>Loading...</div>
-            )}
+            )} */}
           </S.Bottom>
         </S.Wrapper>
       )}

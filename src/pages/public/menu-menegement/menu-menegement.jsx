@@ -30,7 +30,7 @@ export default function MenuMenegement() {
   const [deleteStatus, setDeleteStatus] = useState(false);
   //펼쳐진 트리리스트 초기화
   const [text, setText] = useState("Collapse all");
-
+  const [displayWith, setDisplayWith] = useState();
   const { width, height } = useOutletContext();
 
   //삭제된 아이디 관리
@@ -84,6 +84,13 @@ export default function MenuMenegement() {
       refetch();
       setSuccess(false);
     }
+    if (width === 2560) {
+      setDisplayWith(990);
+    }
+
+    if (width === 760) {
+      setDisplayWith(700);
+    }
 
     if (selectedSystem === "") {
       setSelectedSystem(user.system);
@@ -97,7 +104,7 @@ export default function MenuMenegement() {
         }
       }
     }
-  }, [selectedItemKeys, success, menuData, disabled]);
+  }, [selectedItemKeys, success, menuData, disabled, width]);
 
   return (
     <Fragment>
@@ -124,7 +131,7 @@ export default function MenuMenegement() {
               showBorders={true}
               defaultFocusedRowIndex={0}
               selectionMode="single"
-              height={width > 1920 ? 1150 : 800}
+              height={displayWith}
               defaultSortOrder="asc"
             >
               <Scrolling mode="virtual" />
@@ -190,6 +197,8 @@ export default function MenuMenegement() {
               menuData={menuData}
               setDeleteStatus={setDeleteStatus}
               selectedSystem={selectedSystem}
+              width={width}
+              displayWith={displayWith}
             />
             {/*메뉴 디테일*/}
           </S.LeftContents>

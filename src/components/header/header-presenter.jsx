@@ -84,15 +84,15 @@ export default function HeaderPresenter(props) {
               },
               "@media (max-width: 1440px)": {
                 width: "700px",
-                marginLeft: 2,
+                marginLeft: 1,
               },
               "@media (max-width: 760px)": {
                 width: "700px",
-                marginLeft: 2,
+                marginLeft: 1,
               },
               "@media (max-width: 360px)": {
                 width: "700px",
-                marginLeft: 2,
+                marginLeft: 1,
               },
             }}
           >

@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import produce from "immer";
 
 interface ICode {
-  codeValue: string;
+  codeId: string;
   codeName: string;
 }
 
@@ -12,7 +12,7 @@ export interface IPatternCode {
 
 export const initialState: IPatternCode = {
   parentCodeColumn: {
-    codeValue: "",
+    codeId: "",
     codeName: "",
   },
 };
@@ -23,7 +23,7 @@ export const parentCodeColumnSlice = createSlice({
   reducers: {
     setUpParentCodeColumn: (state, action: PayloadAction<ICode>) => {
       return produce(state, (draft) => {
-        draft.parentCodeColumn.codeValue = action.payload.codeValue;
+        draft.parentCodeColumn.codeId = action.payload.codeId;
         draft.parentCodeColumn.codeName = action.payload.codeName;
       });
     },

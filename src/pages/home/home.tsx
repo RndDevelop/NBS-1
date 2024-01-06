@@ -3,19 +3,11 @@ import Header from "../../components/header/header-container";
 import Nav from "../../components/nav/nav-container-nochildren";
 import { Box } from "@mui/material";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+
 import { getCookie } from "../../config/cookies";
 import { useNavigate } from "react-router-dom";
 import { createContext } from "react";
 import * as S from "../../styles/page-style/home-styled";
-
-interface ISystemSelector {
-  systemSelectedSlice: {
-    systemSelected: {
-      systemValue: string;
-    };
-  };
-}
 
 export const AppContext = createContext({ width: 0, height: 0 });
 
@@ -23,9 +15,6 @@ export default function Home() {
   const [isCancel, setIsCancel] = useState(false);
 
   const navigate = useNavigate();
-  const { systemSelected } = useSelector(
-    (state: ISystemSelector) => state.systemSelectedSlice
-  );
 
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -63,7 +52,7 @@ export default function Home() {
           overflow: "hidden",
 
           "@media (max-width:760px)": {
-            overflow: "scroll",
+            // overflow: "scroll",
             height: "100vh",
             width: "100vw",
           },
@@ -109,13 +98,26 @@ export default function Home() {
             sx={{
               width: "100%",
               height: "100%",
+              // overflow: "auto",
 
               "@media (min-width:120px) and (max-width:470px)": {
                 width: !isCancel ? "0%" : "100%",
               },
+              "@media (min-width:471px) and (max-width:760px)": {
+                width: !isCancel ? "65%" : "100%",
+              },
+              "@media (min-width:761px) and (max-width:1440px)": {
+                width: !isCancel ? "75%" : "100%",
+              },
+              "@media (min-width:1441px) and (max-width:1919px)": {
+                width: !isCancel ? "86%" : "100%",
+              },
+              "@media (min-width:1920px) and (max-width:2560px)": {
+                width: !isCancel ? "90%" : "100%",
+              },
             }}
           >
-            <Outlet context={windowSize} />
+            <Outlet context={{ windowSize, isCancel }} />
           </Box>
         </Box>
       </Box>

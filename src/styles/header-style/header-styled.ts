@@ -21,9 +21,10 @@ export const Hamberger = styled.div`
   width: 50px;
   height: 30px;
   background-image: url("/image/hamberger.png");
-  background-size: 100%;
+  background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 `;
 
 export const Wrapper = styled.div`
